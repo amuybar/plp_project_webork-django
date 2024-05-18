@@ -28,11 +28,15 @@ DEBUG = True
 ALLOWED_HOSTS = ['plp-project-webork-django.onrender.com', 'localhost', '127.0.0.1']
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  #
+    'http://localhost:3000',  
     'http://plp-project-webork-django.onrender.com',
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://plp-project-webork-django.onrender.com',
+    'http://localhost:3000',
+]
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
