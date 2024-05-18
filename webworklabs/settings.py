@@ -25,7 +25,13 @@ SECRET_KEY = 'django-insecure-k(lkmk%u7gdi@%%3uedhlfle6)w2&k@m^d##7sbbbsc$6@p+3(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['plp-project-webork-django.onrender.com', 'localhost', '127.0.0.1']
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',  #
+    'http://plp-project-webork-django.onrender.com',
+]
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 
@@ -50,6 +56,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'api',
     'drf_yasg',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -60,6 +67,7 @@ REST_FRAMEWORK = {
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
